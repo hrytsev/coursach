@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Entrance));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.egoldsCard1 = new yt_DesignUI.EgoldsCard();
             this.yt_Button13 = new yt_DesignUI.yt_Button();
             this.yt_Button12 = new yt_DesignUI.yt_Button();
@@ -66,6 +66,17 @@
             this.panel1.Size = new System.Drawing.Size(1074, 78);
             this.panel1.TabIndex = 36;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(43, -2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(122, 84);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -118,17 +129,6 @@
             this.label4.Size = new System.Drawing.Size(174, 25);
             this.label4.TabIndex = 40;
             this.label4.Text = "Contact number: +";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(43, -2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(122, 84);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // egoldsCard1
             // 
@@ -188,7 +188,7 @@
             this.yt_Button12.BorderColorOnHoverEnabled = false;
             this.yt_Button12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.yt_Button12.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.yt_Button12.ForeColor = System.Drawing.Color.White;
+            this.yt_Button12.ForeColor = System.Drawing.Color.Moccasin;
             this.yt_Button12.Location = new System.Drawing.Point(127, 95);
             this.yt_Button12.Name = "yt_Button12";
             this.yt_Button12.RippleColor = System.Drawing.Color.AntiqueWhite;

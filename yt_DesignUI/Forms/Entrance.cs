@@ -215,12 +215,7 @@ namespace yt_DesignUI
                 return;
 
             // Обрабатываем только цифровые клавиши, кроме клавиши Enter
-            if (e.KeyCode == Keys.Enter)
-            {
-                goNext();
-                return;
-
-            }
+            
             // Добавляем текст нажатой клавиши к тексту кнопки yt_Button12 только если это не клавиша Enter
             else if ((e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9) || (e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9))
             {
