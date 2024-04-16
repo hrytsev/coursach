@@ -51,7 +51,10 @@ namespace yt_DesignUI
             holdTimer.Interval = 150; // Интервал таймера - 100 миллисекунд
             holdTimer.Tick += HoldTimer_Tick;
 
-            // ListManager.DeserializeData("temp");
+           // string projectRootPath = Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath));
+            //string filePath = Path.Combine(projectRootPath, "storage", "temp.json");
+
+            //ListManager.SerializeData(filePath);
             generateStartStuff();
             // Привязываем обработчики событий для кнопки
             //yt_Button12.MouseDown += yt_Button1_MouseDown;
@@ -226,7 +229,9 @@ namespace yt_DesignUI
 
         private void Entrance_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ListManager.SerializeData("temp");
+            string projectRootPath = Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath));
+            string filePath = Path.Combine(projectRootPath, "storage",  "temp.json");
+            ListManager.SerializeData(filePath);
         }
     }
     }

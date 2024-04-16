@@ -28,7 +28,8 @@ namespace yt_DesignUI.Forms
             this.currentWorker = worker;
             this.currentEnterprise = enterprise;
             renderInfo();
-            string imagePath = Path.Combine(Application.StartupPath, "photos", "none.png");
+            string projectRootPath = Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath));
+            string imagePath = Path.Combine(projectRootPath, "photos", "none.png");
             pictureBox2.Image = Image.FromFile(imagePath);
             label5.Text = "";
         }
@@ -73,9 +74,10 @@ namespace yt_DesignUI.Forms
         }
         public void photoPreview()
         {
-            string currentDirectory = Environment.CurrentDirectory;
+            // Определяем путь к текущей директории проекта
+            string projectRootPath = Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath));
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = System.IO.Path.Combine(currentDirectory, "photos");
+            openFileDialog.InitialDirectory = Path.Combine(projectRootPath, "photos");
             openFileDialog.Filter = "Image Files (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png|All Files (*.*)|*.*";
             DialogResult result = openFileDialog.ShowDialog();
             if (result == DialogResult.OK)
@@ -85,10 +87,11 @@ namespace yt_DesignUI.Forms
                 generateSign(selectedFilePath);
             }
             else
-            { MessageBox.Show("Photo wasn`t choosen");
-                string imagePath = Path.Combine(Application.StartupPath, "photos", "none.png");
+            {
+                MessageBox.Show("Photo wasn't chosen");
+                // Используем путь к папке photos в корневой директории проекта
+                string imagePath = Path.Combine(projectRootPath, "photos", "none.png");
                 pictureBox2.Image = Image.FromFile(imagePath);
-
             }
         }
         public void generateSign(string path)

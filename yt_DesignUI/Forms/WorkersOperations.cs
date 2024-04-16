@@ -131,8 +131,9 @@ namespace yt_DesignUI.Forms
 
         private void yt_Button3_Click(object sender, EventArgs e)
         {
-            Removing removeWorker = new Removing(currentWorker, currentEnterprise);
             this.Hide();
+            Removing removeWorker = new Removing(currentWorker, currentEnterprise);
+            
             removeWorker.ShowDialog();
         }
 
@@ -143,12 +144,27 @@ namespace yt_DesignUI.Forms
 
         private void yt_Button7_Click(object sender, EventArgs e)
         {
-            //AddNew addNew = new AddNew(c)
+            this.Hide();
+            Supervisor supervisor = currentWorker as Supervisor;
+            if (supervisor != null)
+            {
+                AddNew addNew = new AddNew(supervisor, currentEnterprise);
+                addNew.ShowDialog();
+
+            }
+
         }
 
         private void yt_Button6_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Supervisor supervisor = currentWorker as Supervisor;
+            if (supervisor != null)
+            {
+                Editing edit = new Editing(supervisor, currentEnterprise);
+                edit.ShowDialog();
 
+            }
         }
     }
 }
