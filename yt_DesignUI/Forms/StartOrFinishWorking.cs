@@ -56,15 +56,22 @@ namespace yt_DesignUI.Forms
         }
         public void renderNonePhoto()
         {
+            string projectRootPath = Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath));
+            string imagePath = Path.Combine(projectRootPath, "photos", "none.png");
 
-            string imagePath = Path.Combine(Application.StartupPath, "photos", "none.png");
+            if (!File.Exists(imagePath))
+            {
+                MessageBox.Show("Изображение none.png не найдено.");
+                return;
+            }
+
             pictureBox2.Image = Image.FromFile(imagePath);
-
         }
         public void renderPhoto()
         {
-            
-            string photosPath = Path.Combine(Application.StartupPath, "photos");
+
+            string projectRootPath = Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath));
+            string photosPath = Path.Combine(projectRootPath, "photos");
 
             if (!Directory.Exists(photosPath))
             {
@@ -72,7 +79,7 @@ namespace yt_DesignUI.Forms
                 return;
             }
 
-          
+
             string[] photoFiles = Directory.GetFiles(photosPath);
 
            

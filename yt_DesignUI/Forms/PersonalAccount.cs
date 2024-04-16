@@ -49,7 +49,16 @@ namespace yt_DesignUI.Forms
                 yt_Button4.Visible = false;
                 isCamera = false;
                 MessageBox.Show("Camera didn`t find");
-                string imagePath = Path.Combine(Application.StartupPath, "photos", "none.png");
+                string projectRootPath = Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath));
+                string directoryPath = Path.Combine(projectRootPath, "photos");
+
+                // Проверяем, существует ли папка, и создаем ее, если она не существует
+                if (!Directory.Exists(directoryPath))
+                {
+                    Directory.CreateDirectory(directoryPath);
+                }
+
+                string imagePath = Path.Combine(directoryPath, "none.png");
                 pictureBox2.Image = Image.FromFile(imagePath); 
                 return;
             }
@@ -103,9 +112,10 @@ namespace yt_DesignUI.Forms
                 return;
             }
 
-           
-            string directoryPath = Path.Combine(Application.StartupPath, "photos");
-            if (!Directory.Exists(directoryPath))
+
+                string projectRootPath = Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath));
+                string directoryPath = Path.Combine(projectRootPath, "photos");
+                if (!Directory.Exists(directoryPath))
                 Directory.CreateDirectory(directoryPath);
 
             string filePath = Path.Combine(directoryPath, fileName);
