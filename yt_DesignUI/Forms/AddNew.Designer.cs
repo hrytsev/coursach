@@ -308,6 +308,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddNew";
             this.Text = "AddNew";
             this.Load += new System.EventHandler(this.AddNew_Load);
