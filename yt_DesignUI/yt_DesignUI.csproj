@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{41573EE5-B877-4F9F-A173-B432995E6382}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>yt_DesignUI</RootNamespace>
+    <AssemblyName>yt_DesignUI</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Animation\Animation.cs" />
+    <Compile Include="Animation\Animator.cs" />
+    <Compile Include="Components\EgoldsFormStyle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\EgoldsFormStyle.Designer.cs">
+      <DependentUpon>EgoldsFormStyle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\EgoldsStyle.cs" />
+    <Compile Include="Components\RoundingButtonsComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\RoundingButtonsComponent.Designer.cs">
+      <DependentUpon>RoundingButtonsComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EgoldsCard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\EgoldsToggleSwitch.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\EgoldsRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\EgoldsProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\EgoldsGoogleTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ShadowedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Drawer.cs" />
+    <Compile Include="Forms\AddNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddNew.Designer.cs">
+      <DependentUpon>AddNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddNewEnterprise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddNewEnterprise.Designer.cs">
+      <DependentUpon>AddNewEnterprise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Design.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Design.Designer.cs">
+      <DependentUpon>Design.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Editing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Editing.Designer.cs">
+      <DependentUpon>Editing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EnterpriseOperations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EnterpriseOperations.Designer.cs">
+      <DependentUpon>EnterpriseOperations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EnterpriseRemoving.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EnterpriseRemoving.Designer.cs">
+      <DependentUpon>EnterpriseRemoving.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Entrance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Entrance.Designer.cs">
+      <DependentUpon>Entrance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FlatColors.cs" />
+    <Compile Include="Forms\GetInfoEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GetInfoEmployee.Designer.cs">
+      <DependentUpon>GetInfoEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Inbox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Inbox.Designer.cs">
+      <DependentUpon>Inbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NoResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NoResults.Designer.cs">
+      <DependentUpon>NoResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PersonalAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PersonalAccount.Designer.cs">
+      <DependentUpon>PersonalAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PhotoLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PhotoLog.Designer.cs">
+      <DependentUpon>PhotoLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Removing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Removing.Designer.cs">
+      <DependentUpon>Removing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StartOrFinishWorking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StartOrFinishWorking.Designer.cs">
+      <DependentUpon>StartOrFinishWorking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WorkersOperations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WorkersOperations.Designer.cs">
+      <DependentUpon>WorkersOperations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WritingNewLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WritingNewLetter.Designer.cs">
+      <DependentUpon>WritingNewLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Enterprise.cs" />
+    <Compile Include="Models\ListManager.cs" />
+    <Compile Include="Models\Supervisor.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controls\yt_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="Forms\AddNew.resx">
+      <DependentUpon>AddNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddNewEnterprise.resx">
+      <DependentUpon>AddNewEnterprise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Design.resx">
+      <DependentUpon>Design.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Editing.resx">
+      <DependentUpon>Editing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EnterpriseOperations.resx">
+      <DependentUpon>EnterpriseOperations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EnterpriseRemoving.resx">
+      <DependentUpon>EnterpriseRemoving.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Entrance.resx">
+      <DependentUpon>Entrance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GetInfoEmployee.resx">
+      <DependentUpon>GetInfoEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Inbox.resx">
+      <DependentUpon>Inbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NoResults.resx">
+      <DependentUpon>NoResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PersonalAccount.resx">
+      <DependentUpon>PersonalAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PhotoLog.resx">
+      <DependentUpon>PhotoLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Removing.resx">
+      <DependentUpon>Removing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StartOrFinishWorking.resx">
+      <DependentUpon>StartOrFinishWorking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WorkersOperations.resx">
+      <DependentUpon>WorkersOperations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WritingNewLetter.resx">
+      <DependentUpon>WritingNewLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Logos\png-transparent-factory-icon-creative-icon-design-factory-chimney-multicolored-factory-illustration-building-camera-icon-phone-icon-thumbnail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Logos\Main Logo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
