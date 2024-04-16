@@ -51,11 +51,12 @@ namespace yt_DesignUI
             holdTimer.Interval = 150; // Интервал таймера - 100 миллисекунд
             holdTimer.Tick += HoldTimer_Tick;
 
-           // string projectRootPath = Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath));
+            // string projectRootPath = Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath));
             //string filePath = Path.Combine(projectRootPath, "storage", "temp.json");
 
             //ListManager.SerializeData(filePath);
             generateStartStuff();
+            //renderInfo(ListManager.getEnterprise()[ListManager.getIndex()]);
             // Привязываем обработчики событий для кнопки
             //yt_Button12.MouseDown += yt_Button1_MouseDown;
             //yt_Button12.MouseUp += yt_Button1_MouseUp;
@@ -88,6 +89,9 @@ namespace yt_DesignUI
             Supervisor supervisor2 = new Supervisor("dimas", myDateTime, 7777776, 50, "geniy");
             ListManager.addNewEmployee(supervisor);
             ListManager.addNewEmployee(supervisor2);
+            ListManager.addNewEnterprise(enterprise);
+            ListManager.addNewEnterprise(enterprise);
+            ListManager.addNewEnterprise(enterprise);
         }
         private void renderInfo(Enterprise enterprise)
         {

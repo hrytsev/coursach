@@ -28,6 +28,7 @@ namespace yt_DesignUI.Forms
             this.currentWorker = worker;
             this.currentEnterprise = enterprise;
             renderLog();
+            setComboBox();
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -104,23 +105,28 @@ namespace yt_DesignUI.Forms
 
         private void yt_Button4_Click(object sender, EventArgs e)
         {
-            int parsedValue;
-            if (textBox1.Text == "")             
-            {
-                ListManager.changeIndex(0);
-                MessageBox.Show("Index changed on 0");
-            }else
-            if (int.TryParse(textBox1.Text, out parsedValue))
-            {
-                if (ListManager.getEnterprise().Count >= int.Parse(textBox1.Text))
+            int index = comboBox1.SelectedIndex;
+                if (ListManager.getEnterprise().Count >= index)
                 {
-                    ListManager.changeIndex(int.Parse(textBox1.Text));
-                    MessageBox.Show($"Index changed on {int.Parse(textBox1.Text)}");
+                    ListManager.changeIndex(index);
+                    MessageBox.Show($"Index changed to {index}");
 
                 }
-            }else
-                MessageBox.Show($"Input number to change!");
+           
+
+        }
+        public void setComboBox()
+        {
+            currentEnterprise.addToWorkers(currentWorker);
+            foreach (Enterprise enter in ListManager.getEnterprise())
+            {
+                comboBox1.Items.Add(enter.Name);
+            }
+            comboBox1.SelectedIndex =ListManager.getIndex();
+            ListManager.addNewEnterprise(currentEnterprise);
+
 
         }
     }
+
 }

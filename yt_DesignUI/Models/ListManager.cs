@@ -28,7 +28,10 @@ namespace yt_DesignUI.Models
             return enterpriseList;
         }
 
-
+        public static int getIndex()
+        {
+            return currentEnterpriseIndex;
+        }
 
         public static void addNewEmployee(Employee employee)
         {
