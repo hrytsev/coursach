@@ -123,5 +123,22 @@ namespace yt_DesignUI.Forms
             workersOperatonsForm.ShowDialog();
             this.Show();
         }
+
+        private void yt_Button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Supervisor currentSupervisor = currentWorker as Supervisor;
+            if (currentSupervisor != null)
+            {
+                EnterpriseOperations entrop = new EnterpriseOperations(currentSupervisor, currentEnterprise);
+                entrop.ShowDialog();
+            }
+            else
+            {
+                // Обработка ситуации, если currentWorker не является Supervisor
+                MessageBox.Show("Critical security error.");
+            }
+            this.Show();
+        }
     }
 }

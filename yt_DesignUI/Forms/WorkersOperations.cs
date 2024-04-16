@@ -145,5 +145,10 @@ namespace yt_DesignUI.Forms
         {
             //AddNew addNew = new AddNew(c)
         }
+
+        private void yt_Button6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

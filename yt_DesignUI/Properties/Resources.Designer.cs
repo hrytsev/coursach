@@ -79,16 +79,5 @@ namespace yt_DesignUI.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap png_transparent_factory_icon_creative_icon_design_factory_chimney_multicolored_factory_illustration_building_camera_icon_phone_icon_thumbnail {
-            get {
-                object obj = ResourceManager.GetObject("png-transparent-factory-icon-creative-icon-design-factory-chimney-multicolored-fa" +
-                        "ctory-illustration-building-camera-icon-phone-icon-thumbnail", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

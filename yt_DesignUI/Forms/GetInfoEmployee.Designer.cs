@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GetInfoEmployee));
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.yt_Button2 = new yt_DesignUI.yt_Button();
             this.yt_Button1 = new yt_DesignUI.yt_Button();
@@ -41,36 +41,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.yt_Button5 = new yt_DesignUI.yt_Button();
             this.yt_Button6 = new yt_DesignUI.yt_Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::yt_DesignUI.Properties.Resources.Main_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(23, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 61);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(384, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(256, 57);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "HrytsevCO";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.Location = new System.Drawing.Point(628, 462);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(174, 25);
@@ -79,7 +59,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
@@ -90,11 +70,22 @@
             this.panel1.TabIndex = 41;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.Moccasin;
+            this.label1.Location = new System.Drawing.Point(407, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(256, 57);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "HrytsevCO";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(124, 459);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 29);
@@ -159,7 +150,7 @@
             // 
             // yt_Button3
             // 
-            this.yt_Button3.BackColor = System.Drawing.Color.SteelBlue;
+            this.yt_Button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.yt_Button3.BackColorAdditional = System.Drawing.Color.Gray;
             this.yt_Button3.BackColorGradientEnabled = false;
             this.yt_Button3.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
@@ -226,7 +217,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label5.Location = new System.Drawing.Point(28, 186);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 40);
@@ -236,7 +227,7 @@
             // 
             // yt_Button5
             // 
-            this.yt_Button5.BackColor = System.Drawing.Color.SteelBlue;
+            this.yt_Button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.yt_Button5.BackColorAdditional = System.Drawing.Color.Gray;
             this.yt_Button5.BackColorGradientEnabled = false;
             this.yt_Button5.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
@@ -260,10 +251,11 @@
             this.yt_Button5.UseRippleEffect = true;
             this.yt_Button5.UseVisualStyleBackColor = false;
             this.yt_Button5.UseZoomEffectOnHover = false;
+            this.yt_Button5.Click += new System.EventHandler(this.yt_Button5_Click);
             // 
             // yt_Button6
             // 
-            this.yt_Button6.BackColor = System.Drawing.Color.SteelBlue;
+            this.yt_Button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.yt_Button6.BackColorAdditional = System.Drawing.Color.Gray;
             this.yt_Button6.BackColorGradientEnabled = false;
             this.yt_Button6.BackColorGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
@@ -288,6 +280,17 @@
             this.yt_Button6.UseVisualStyleBackColor = false;
             this.yt_Button6.UseZoomEffectOnHover = false;
             this.yt_Button6.Click += new System.EventHandler(this.yt_Button6_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(39, -2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(115, 73);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // GetInfoEmployee
             // 
@@ -319,18 +322,15 @@
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.yt_Button5, 0);
             this.Controls.SetChildIndex(this.yt_Button6, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
@@ -342,5 +342,7 @@
         private System.Windows.Forms.Label label5;
         private yt_Button yt_Button5;
         private yt_Button yt_Button6;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

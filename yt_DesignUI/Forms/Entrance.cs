@@ -49,8 +49,8 @@ namespace yt_DesignUI
             holdTimer.Interval = 150; // Интервал таймера - 100 миллисекунд
             holdTimer.Tick += HoldTimer_Tick;
 
-            ListManager.DeserializeData("temp");
-
+            // ListManager.DeserializeData("temp");
+            generateStartStuff();
             // Привязываем обработчики событий для кнопки
             //yt_Button12.MouseDown += yt_Button1_MouseDown;
             //yt_Button12.MouseUp += yt_Button1_MouseUp;
