@@ -14,17 +14,18 @@ namespace yt_DesignUI.Models
         protected List<string> log;
         protected int contactNumber;
         protected List <Employee> employeers;
-        protected List <Supervisor> supervisors;
-
-        public Enterprise(string name, string rules, int contactNumber)
+        public Enterprise(string name, string rules,  List<string> log, int contactNumber, List<Employee> employeers)
         {
             this.name = name;
             this.rules = rules;
             this.contactNumber = contactNumber;
-            employeers = new List<Employee>();
-            log = new List<string>();
+            this.employeers = employeers;
+            this.log = log;
         }
+        public Enterprise()
+        {
 
+        }
         public string Name
         {
             protected set { name = value; }
@@ -35,11 +36,24 @@ namespace yt_DesignUI.Models
             protected set { rules = value; }
             get { return rules; }
         }
+        public List<string> Log
+        {
+            protected set { log = value; }
+            get { return log; }
+        }
         public int ContactNumber
         {
             protected set { contactNumber = value; }
             get { return contactNumber; }
         }
+        public List<Employee> Employeers
+        {
+            protected set { employeers = value; }
+            get { return employeers; }
+        }
+
+
+
 
         public List<string> getLog()
         {

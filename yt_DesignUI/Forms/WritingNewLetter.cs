@@ -38,7 +38,7 @@ namespace yt_DesignUI.Forms
         }
         public void renderInfo()
         {
-            ListManager.addNewEmployee(currentWorker);
+            //ListManager.addNewEmployee(currentWorker);
             label5.Text = 
                 //ListManager.getEmployeers().Count().ToString();
                 currentEnterprise.Name;
@@ -48,7 +48,7 @@ namespace yt_DesignUI.Forms
         public void generateComboBox()
         {
           
-            List<Employee> listOfAll = ListManager.getEmployeers();
+            List<Employee> listOfAll = currentEnterprise.returnEmployee();
             int length = listOfAll.Count();
             foreach (Employee worker in listOfAll)
             {
@@ -78,7 +78,7 @@ namespace yt_DesignUI.Forms
         public void sendLetterToAll()
         {
             string textToSend = egoldsGoogleTextBox1.Text;
-            List<Employee> allWorkers = ListManager.getEmployeers();
+            List<Employee> allWorkers = currentEnterprise.returnEmployee();
             foreach(Employee worker in allWorkers)
             {
                 if (worker == currentWorker)
@@ -90,7 +90,7 @@ namespace yt_DesignUI.Forms
         {
             string textToSend = egoldsGoogleTextBox1.Text;
             int selectedWorkerIndex = comboBox1.SelectedIndex;
-            List<Employee> allWorkers = ListManager.getEmployeers();
+            List<Employee> allWorkers = currentEnterprise.returnEmployee();
 
             DialogResult result = MessageBox.Show($"Are you sure you want to send this letter to {allWorkers[selectedWorkerIndex].Name} ?", "Letter confiramtion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)

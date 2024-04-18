@@ -14,21 +14,7 @@ namespace yt_DesignUI.Models
         {
         }
 
-        public void removeEmployeeAt(int index)
-        {
-            ListManager.removeEmployeeAt(index);
-        }
-       
-        public void crеateAndAddNewEmployee(string _name, DateTime _birthday, int _id, float _rate,string _position)
-        {
-            Employee NewEmployee = new Employee(true,new List<string>(), 0, _position, false,_name,_birthday,_id,_rate,DateTime.Now);
-            ListManager.addNewEmployee(NewEmployee);
-        }
-        public void crеateAndAddNewSupervisor(string _name, DateTime _birthday, int _id, float _rate, string _position)
-        {
-            Supervisor NewSupervisor = new Supervisor(true, new List<string>(), 0, _position, false, _name, _birthday, _id, _rate,DateTime.Now); ;
-            ListManager.addNewEmployee(NewSupervisor);
-        }
+        
         public void editEmployye(Employee currentWorker,string newName,string newPosition, float newRate,int newId)
         {
             currentWorker.changeName(newName);

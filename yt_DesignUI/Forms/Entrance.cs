@@ -93,13 +93,16 @@ namespace yt_DesignUI
         }
         public void generateStartStuff()
         {
-            Enterprise enterprise = new Enterprise("Hrytsev!CO!", "wear that shit", 380677454);
+            Enterprise enterprise = new Enterprise("Hrytsev!CO!", "wear that shit",new List<string>(), 380677454, new List<Employee>());
             //renderInfo(enterprise);
             this.currentEnterprise = enterprise;
             DateTime myDateTime = new DateTime(2024, 2, 9, 10, 30, 0);
             Employee supervisor = new Employee(true,new List<string>(),0,"geniy",false,"ivan",DateTime.Now,7777777,52,DateTime.Now);
+            Supervisor supervisors = new Supervisor(true,new List<string>(),0,"geniy",false,"ivan",DateTime.Now,7777776,52,DateTime.Now);
            // Supervisor supervisor2 = new Supervisor("dimas", myDateTime, 7777776, 50, "geniy");
-            ListManager.addNewEmployee(supervisor);
+           
+            currentEnterprise.addToWorkers(supervisor);
+            currentEnterprise.addToWorkers(supervisors);
             //ListManager.addNewEmployee(supervisor2);
             ListManager.addNewEnterprise(enterprise);
             ListManager.addNewEnterprise(enterprise);
@@ -181,7 +184,7 @@ namespace yt_DesignUI
                 MessageBox.Show("Enter ID!");
                 return;
             }
-            foreach (Employee super in ListManager.getEmployeers())
+            foreach (Employee super in currentEnterprise.returnEmployee())
             {
 
                 if (inputText.ToString() == super.ID.ToString())

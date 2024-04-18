@@ -13,7 +13,6 @@ namespace yt_DesignUI.Models
 {
     internal static class ListManager
     {
-        private static List<Employee> employeeList = new List<Employee>();      
         private static List<Enterprise> enterpriseList = new List<Enterprise>();
         private static int currentEnterpriseIndex=0;
        
@@ -21,10 +20,7 @@ namespace yt_DesignUI.Models
         {
             currentEnterpriseIndex = index;
         }
-        public static List<Employee> getEmployeers()
-        {
-            return employeeList;
-        }
+        
        
         public static List<Enterprise> getEnterprise()
         {
@@ -36,10 +32,7 @@ namespace yt_DesignUI.Models
             return currentEnterpriseIndex;
         }
 
-        public static void addNewEmployee(Employee employee)
-        {
-            employeeList.Add(employee);
-        }
+        
 
        
 
@@ -48,12 +41,7 @@ namespace yt_DesignUI.Models
             enterpriseList.Add(enterprise);
         }
 
-        public static void removeEmployeeAt(int index)
-        {
-            if (index < 0 || index >= employeeList.Count)
-                return;
-            employeeList.RemoveAt(index);
-        }
+      
 
         
 
@@ -65,10 +53,24 @@ namespace yt_DesignUI.Models
         }
         public static void SerializeData(string filePath)
         {
+            var serializedEnterpriseList = new List<object>();
+            foreach (var enterprise in enterpriseList)
+            {
+                var enterpriseData = new
+                {
+                    Name = enterprise.Name,
+                    Rules = enterprise.Rules,
+                    Log = enterprise.Log,
+                    ContactNumber = enterprise.ContactNumber,
+                    Employeers = enterprise.Employeers.Select(e => new { Type = e.GetType().FullName, Data = e }).ToList()
+                };
+
+                serializedEnterpriseList.Add(enterpriseData);
+            }
+
             var data = new
             {
-                EmployeeList = AddTypeInformation(employeeList),
-                EnterpriseList = AddTypeInformation(enterpriseList),
+                EnterpriseList = serializedEnterpriseList,
                 CurrentEnterpriseIndex = currentEnterpriseIndex
             };
 
@@ -76,77 +78,71 @@ namespace yt_DesignUI.Models
             File.WriteAllText(filePath, json);
         }
 
+
+
+
+        private static object AddTypeInformation<T>(T data)
+        {
+            return new
+            {
+                Type = data.GetType().FullName,
+                Data = data
+            };
+        }
         public static void DeserializeData(string filePath)
         {
             if (File.Exists(filePath))
             {
                 string json = File.ReadAllText(filePath);
                 var data = JsonConvert.DeserializeObject<dynamic>(json);
-                employeeList = RestoreWithTypeInformation<List<Employee>>(data.EmployeeList);
-                enterpriseList = RestoreWithTypeInformation<List<Enterprise>>(data.EnterpriseList);
+                enterpriseList.Clear(); 
+
+                foreach (var enterpriseData in data.EnterpriseList)
+                {
+                    var employeersData = enterpriseData.Employeers;
+                    var employeersList = new List<Employee>();
+
+                    foreach (var employeeData in employeersData)
+                    {
+                        var employeeTypeString = (string)employeeData.Type;
+                        var dataType = Type.GetType(employeeTypeString);
+                        
+                        Employee employee = null;
+                        var employeeJson = employeeData.Data.ToString();
+                        switch ((string)employeeData.Type)
+                        {
+                            case "yt_DesignUI.Models.Employee":
+                                employee = JsonConvert.DeserializeObject<Employee>(employeeJson);
+                                break;
+                            case "yt_DesignUI.Models.Supervisor":
+                                employee = JsonConvert.DeserializeObject<Supervisor>(employeeJson);
+                                break;
+                            // Добавьте другие кейсы для других типов сотрудников, если они есть
+                            default:
+                                // Обработка неизвестного типа сотрудника, если это необходимо
+                                break;
+                        }
+
+                        employeersList.Add(employee);
+                    }
+
+                    var enterprise = new Enterprise(
+                          enterpriseData.Name.ToString(), 
+                         enterpriseData.Rules.ToString(),
+                        JsonConvert.DeserializeObject<List<string>>(enterpriseData.Log.ToString()), 
+                         Convert.ToInt32(enterpriseData.ContactNumber), 
+                       employeersList 
+);
+
+
+                    enterpriseList.Add(enterprise);
+                }
+
                 currentEnterpriseIndex = data.CurrentEnterpriseIndex;
             }
         }
-        private static List<object> AddTypeInformation<T>(List<T> dataList)
-        {
-            List<object> objects = new List<object>();
-            foreach (var item in dataList)
-            {
-                objects.Add(new
-                {
-                    Type = item.GetType().FullName,
-                    Data = item
-                });
-            }
-            return objects;
-        }
 
-        private static List<T> RestoreWithTypeInformation<T>(List<object> objects)
-        {
-            List<T> resultList = new List<T>();
-            foreach (var item in objects)
-            {
-                // Check if the item is an IDictionary
-                if (item is IDictionary<string, object>)
-                {
-                    var dictionary = (IDictionary<string, object>)item;
 
-                    // Check if the type information is present
-                    if (dictionary.ContainsKey("Type"))
-                    {
-                        string typeFullName = dictionary["Type"] as string;
-                        Type type = Type.GetType(typeFullName);
-
-                        // Get the actual type of the data using typeof
-                        var actualType = typeof(List<>).MakeGenericType(type);
-
-                        // Check if the data is an IEnumerable
-                        if (dictionary["Data"] is IEnumerable)
-                        {
-                            var jsonData = JsonConvert.SerializeObject(dictionary["Data"]); // Serialize data to JSON string
-                            var typedData = JsonConvert.DeserializeObject(jsonData, actualType); // Deserialize JSON string to target type
-                            resultList.Add((T)Convert.ChangeType(typedData, typeof(T))); // Convert deserialized data to type T and add to result list
-                        }
-                        else
-                        {
-                            // Handle the case where the data is not an IEnumerable
-                            Console.WriteLine($"Warning: Item[\"Data\"] is not an IEnumerable: {item}");
-                        }
-                    }
-                    else
-                    {
-                        // Handle the case where type information is missing
-                        Console.WriteLine($"Warning: Type information missing for item: {item}");
-                    }
-                }
-                else
-                {
-                    // Handle the case where the item is not an IDictionary
-                    Console.WriteLine($"Warning: Item is not an IDictionary: {item}");
-                }
-            }
-            return resultList;
-        }
     }
 
 }

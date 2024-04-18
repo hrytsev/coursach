@@ -21,6 +21,7 @@ namespace yt_DesignUI.Models
             this.workHours = workHours;
             this.lastStartTime = lastStartTime;
         }
+       
         protected DateTime lastStartTime;
         protected bool isChecked=true;
         protected string name;

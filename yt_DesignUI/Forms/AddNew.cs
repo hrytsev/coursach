@@ -69,16 +69,14 @@ namespace yt_DesignUI.Forms
             {
                 Supervisor super = new Supervisor(true, new List<string>(), 0, newPosition, false, newName, selectedDate, newID, newRate, DateTime.Now); 
                 currentEnterprise.addToWorkers(super);
-                ListManager.addNewEmployee(super);
                 MessageBox.Show("Admin " +newName+ " was added succesfully");
                 this.Close();
             }
             else
             {
                 Employee employee = new Employee(true, new List<string>(), 0, newPosition, false, newName, selectedDate, newID, newRate,DateTime.Now);
-                currentEnterprise.addToWorkers(employee);
                 MessageBox.Show("Worker " + newName + " was added succesfully");
-                ListManager.addNewEmployee(employee);
+                currentEnterprise.addToWorkers(employee);
                 this.Close();
             }
 
