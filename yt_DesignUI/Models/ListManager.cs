@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.IO;
+using Newtonsoft.Json.Linq;
+
 namespace yt_DesignUI.Models
 {
     internal static class ListManager
@@ -64,25 +66,55 @@ namespace yt_DesignUI.Models
         {
             var data = new
             {
-                EmployeeList = employeeList,
-                EnterpriseList = enterpriseList,
+                EmployeeList = AddTypeInformation(employeeList),
+                EnterpriseList = AddTypeInformation(enterpriseList),
                 CurrentEnterpriseIndex = currentEnterpriseIndex
             };
 
             string json = JsonConvert.SerializeObject(data);
             File.WriteAllText(filePath, json);
         }
+
         public static void DeserializeData(string filePath)
         {
             if (File.Exists(filePath))
             {
                 string json = File.ReadAllText(filePath);
                 var data = JsonConvert.DeserializeObject<dynamic>(json);
-                employeeList = data.EmployeeList.ToObject<List<Employee>>();
-                enterpriseList = data.EnterpriseList.ToObject<List<Enterprise>>();
+                employeeList = RestoreWithTypeInformation<List<Employee>>(data.EmployeeList);
+                enterpriseList = RestoreWithTypeInformation<List<Enterprise>>(data.EnterpriseList);
                 currentEnterpriseIndex = data.CurrentEnterpriseIndex;
-                File.WriteAllText(filePath, string.Empty);
             }
         }
+        private static List<object> AddTypeInformation<T>(List<T> dataList)
+        {
+            List<object> objects = new List<object>();
+            foreach (var item in dataList)
+            {
+                objects.Add(new
+                {
+                    Type = item.GetType().FullName,
+                    Data = item
+                });
+            }
+            return objects;
+        }
+
+        private static List<T> RestoreWithTypeInformation<T>(List<object> objects)
+        {
+            List<T> resultList = new List<T>();
+            foreach (var item in objects)
+            {
+                dynamic dynamicItem = item;
+                string typeFullName = dynamicItem.Type;
+                Type type = Type.GetType(typeFullName);
+
+                T data = JsonConvert.DeserializeObject<T>(dynamicItem.Data.ToString(), new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All });
+                resultList.Add(data);
+
+            }
+            return resultList;
+        }
+
     }
 }
