@@ -1,1 +1,149 @@
-{"EnterpriseList":[{"Name":"Hrytsev!CO!","Rules":"wear that shit","Log":[],"ContactNumber":380677454,"Employeers":[{"Type":"yt_DesignUI.Models.Employee","Data":{"IsChecked":true,"Inbox":[],"WorkHours":0.0,"Position":"geniy","Working":false,"Name":"ivan","Birthday":"2024-04-18T21:46:10.1016536+03:00","ID":7777777,"Rate":52.0,"LastStartTime":"2024-04-18T21:46:10.1026544+03:00"}},{"Type":"yt_DesignUI.Models.Supervisor","Data":{"IsChecked":true,"Inbox":[],"WorkHours":0.0,"Position":"geniy","Working":false,"Name":"ivan","Birthday":"2024-04-18T21:46:10.1036545+03:00","ID":7777776,"Rate":52.0,"LastStartTime":"2024-04-18T21:46:10.1036545+03:00"}}]},{"Name":"Hrytsev!CO!","Rules":"wear that shit","Log":[],"ContactNumber":380677454,"Employeers":[{"Type":"yt_DesignUI.Models.Employee","Data":{"IsChecked":true,"Inbox":[],"WorkHours":0.0,"Position":"geniy","Working":false,"Name":"ivan","Birthday":"2024-04-18T21:46:10.1016536+03:00","ID":7777777,"Rate":52.0,"LastStartTime":"2024-04-18T21:46:10.1026544+03:00"}},{"Type":"yt_DesignUI.Models.Supervisor","Data":{"IsChecked":true,"Inbox":[],"WorkHours":0.0,"Position":"geniy","Working":false,"Name":"ivan","Birthday":"2024-04-18T21:46:10.1036545+03:00","ID":7777776,"Rate":52.0,"LastStartTime":"2024-04-18T21:46:10.1036545+03:00"}}]},{"Name":"Hrytsev!CO!","Rules":"wear that shit","Log":[],"ContactNumber":380677454,"Employeers":[{"Type":"yt_DesignUI.Models.Employee","Data":{"IsChecked":true,"Inbox":[],"WorkHours":0.0,"Position":"geniy","Working":false,"Name":"ivan","Birthday":"2024-04-18T21:46:10.1016536+03:00","ID":7777777,"Rate":52.0,"LastStartTime":"2024-04-18T21:46:10.1026544+03:00"}},{"Type":"yt_DesignUI.Models.Supervisor","Data":{"IsChecked":true,"Inbox":[],"WorkHours":0.0,"Position":"geniy","Working":false,"Name":"ivan","Birthday":"2024-04-18T21:46:10.1036545+03:00","ID":7777776,"Rate":52.0,"LastStartTime":"2024-04-18T21:46:10.1036545+03:00"}}]}],"CurrentEnterpriseIndex":0}
+{
+  "EnterpriseList": [
+    {
+      "Name": "Hrytsev!CO!",
+      "Rules": "wear that shit",
+      "Log": [ "ivan/started/18-04-2024 22:18:45" ],
+      "ContactNumber": 380677454,
+      "Employeers": [
+        {
+          "Type": "yt_DesignUI.Models.Employee",
+          "Data": {
+            "IsChecked": true,
+            "Inbox": [],
+            "WorkHours": 0.0,
+            "Position": "geniy",
+            "Working": false,
+            "Name": "ivan",
+            "Birthday": "2024-04-18T21:46:10.1016536+03:00",
+            "ID": 7777777,
+            "Rate": 52.0,
+            "LastStartTime": "2024-04-18T21:46:10.1026544+03:00"
+          }
+        },
+        {
+          "Type": "yt_DesignUI.Models.Supervisor",
+          "Data": {
+            "IsChecked": true,
+            "Inbox": [],
+            "WorkHours": 0.0,
+            "Position": "geniy",
+            "Working": true,
+            "Name": "ivan",
+            "Birthday": "2024-04-18T21:46:10.1036545+03:00",
+            "ID": 7777776,
+            "Rate": 52.0,
+            "LastStartTime": "2024-04-18T22:18:45.3052065+03:00"
+          }
+        },
+        {
+          "Type": "yt_DesignUI.Models.Supervisor",
+          "Data": {
+            "IsChecked": true,
+            "Inbox": [],
+            "WorkHours": 0.0,
+            "Position": "geniy",
+            "Working": true,
+            "Name": "ivan",
+            "Birthday": "2024-04-18T21:46:10.1036545+03:00",
+            "ID": 7777776,
+            "Rate": 52.0,
+            "LastStartTime": "2024-04-18T22:18:45.3052065+03:00"
+          }
+        },
+        {
+          "Type": "yt_DesignUI.Models.Employee",
+          "Data": {
+            "IsChecked": true,
+            "Inbox": [],
+            "WorkHours": 0.0,
+            "Position": "11",
+            "Working": false,
+            "Name": "ФФФ",
+            "Birthday": "2024-04-18T22:18:46.0212202+03:00",
+            "ID": 1111111,
+            "Rate": 2.0,
+            "LastStartTime": "2024-04-18T22:18:54.0386073+03:00"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Hrytsev!CO!",
+      "Rules": "wear that shit",
+      "Log": [],
+      "ContactNumber": 380677454,
+      "Employeers": [
+        {
+          "Type": "yt_DesignUI.Models.Employee",
+          "Data": {
+            "IsChecked": true,
+            "Inbox": [],
+            "WorkHours": 0.0,
+            "Position": "geniy",
+            "Working": false,
+            "Name": "ivan",
+            "Birthday": "2024-04-18T21:46:10.1016536+03:00",
+            "ID": 7777777,
+            "Rate": 52.0,
+            "LastStartTime": "2024-04-18T21:46:10.1026544+03:00"
+          }
+        },
+        {
+          "Type": "yt_DesignUI.Models.Supervisor",
+          "Data": {
+            "IsChecked": true,
+            "Inbox": [],
+            "WorkHours": 0.0,
+            "Position": "geniy",
+            "Working": false,
+            "Name": "ivan",
+            "Birthday": "2024-04-18T21:46:10.1036545+03:00",
+            "ID": 7777776,
+            "Rate": 52.0,
+            "LastStartTime": "2024-04-18T21:46:10.1036545+03:00"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "Hrytsev!CO!",
+      "Rules": "wear that shit",
+      "Log": [],
+      "ContactNumber": 380677454,
+      "Employeers": [
+        {
+          "Type": "yt_DesignUI.Models.Employee",
+          "Data": {
+            "IsChecked": true,
+            "Inbox": [],
+            "WorkHours": 0.0,
+            "Position": "geniy",
+            "Working": false,
+            "Name": "ivan",
+            "Birthday": "2024-04-18T21:46:10.1016536+03:00",
+            "ID": 7777777,
+            "Rate": 52.0,
+            "LastStartTime": "2024-04-18T21:46:10.1026544+03:00"
+          }
+        },
+        {
+          "Type": "yt_DesignUI.Models.Supervisor",
+          "Data": {
+            "IsChecked": true,
+            "Inbox": [],
+            "WorkHours": 0.0,
+            "Position": "geniy",
+            "Working": false,
+            "Name": "ivan",
+            "Birthday": "2024-04-18T21:46:10.1036545+03:00",
+            "ID": 7777776,
+            "Rate": 52.0,
+            "LastStartTime": "2024-04-18T21:46:10.1036545+03:00"
+          }
+        }
+      ]
+    }
+  ],
+  "CurrentEnterpriseIndex": 0
+}
