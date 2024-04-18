@@ -65,6 +65,7 @@ namespace yt_DesignUI.Forms
             string rules = egoldsGoogleTextBox2.Text.ToString();
             int contactNumber = int.Parse( egoldsGoogleTextBox3.Text);
             Enterprise newEntr = new Enterprise(name, rules, contactNumber);
+            ListManager.addNewEnterprise(newEntr);
             MessageBox.Show($"Enterpise {name} added succesfully");
             this.Close();
         }

@@ -51,12 +51,14 @@ namespace yt_DesignUI
             holdTimer.Interval = 150; // Интервал таймера - 100 миллисекунд
             holdTimer.Tick += HoldTimer_Tick;
 
-            // string projectRootPath = Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath));
-            //string filePath = Path.Combine(projectRootPath, "storage", "temp.json");
+             string projectRootPath = Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath));
+            string filePath = Path.Combine(projectRootPath, "storage", "temp.json");
 
-            //ListManager.DeserializeData(filePath);
-            generateStartStuff();
+            ListManager.DeserializeData(filePath);
+            //generateStartStuff();
             renderInfo(ListManager.getEnterprise()[ListManager.getIndex()]);
+
+            //label1.Text=
             // Привязываем обработчики событий для кнопки
             //yt_Button12.MouseDown += yt_Button1_MouseDown;
             //yt_Button12.MouseUp += yt_Button1_MouseUp;

@@ -81,6 +81,7 @@ namespace yt_DesignUI.Models
                 employeeList = data.EmployeeList.ToObject<List<Employee>>();
                 enterpriseList = data.EnterpriseList.ToObject<List<Enterprise>>();
                 currentEnterpriseIndex = data.CurrentEnterpriseIndex;
+                File.Delete(filePath);
             }
         }
     }
