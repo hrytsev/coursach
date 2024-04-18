@@ -5,9 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Reflection.Emit;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using yt_DesignUI.Models;
 
 namespace yt_DesignUI.Forms
@@ -65,7 +67,7 @@ namespace yt_DesignUI.Forms
             DateTime selectedDate = dateTimePicker1.Value;
             if (admin)
             {
-                Supervisor super = new Supervisor(newName,selectedDate,newID,newRate,newPosition);
+                Supervisor super = new Supervisor(true, new List<string>(), 0, newPosition, false, newName, selectedDate, newID, newRate, DateTime.Now); 
                 currentEnterprise.addToWorkers(super);
                 ListManager.addNewEmployee(super);
                 MessageBox.Show("Admin " +newName+ " was added succesfully");
@@ -73,7 +75,7 @@ namespace yt_DesignUI.Forms
             }
             else
             {
-                Employee employee = new Employee(newName, selectedDate, newID, newRate, newPosition);
+                Employee employee = new Employee(true, new List<string>(), 0, newPosition, false, newName, selectedDate, newID, newRate,DateTime.Now);
                 currentEnterprise.addToWorkers(employee);
                 MessageBox.Show("Worker " + newName + " was added succesfully");
                 ListManager.addNewEmployee(employee);

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.IO;
 using Newtonsoft.Json.Linq;
+using System.Collections;
 
 namespace yt_DesignUI.Models
 {
@@ -105,16 +106,48 @@ namespace yt_DesignUI.Models
             List<T> resultList = new List<T>();
             foreach (var item in objects)
             {
-                dynamic dynamicItem = item;
-                string typeFullName = dynamicItem.Type;
-                Type type = Type.GetType(typeFullName);
+                // Check if the item is an IDictionary
+                if (item is IDictionary<string, object>)
+                {
+                    var dictionary = (IDictionary<string, object>)item;
 
-                T data = JsonConvert.DeserializeObject<T>(dynamicItem.Data.ToString(), new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All });
-                resultList.Add(data);
+                    // Check if the type information is present
+                    if (dictionary.ContainsKey("Type"))
+                    {
+                        string typeFullName = dictionary["Type"] as string;
+                        Type type = Type.GetType(typeFullName);
 
+                        // Get the actual type of the data using typeof
+                        var actualType = typeof(List<>).MakeGenericType(type);
+
+                        // Check if the data is an IEnumerable
+                        if (dictionary["Data"] is IEnumerable)
+                        {
+                            var jsonData = JsonConvert.SerializeObject(dictionary["Data"]); // Serialize data to JSON string
+                            var typedData = JsonConvert.DeserializeObject(jsonData, actualType); // Deserialize JSON string to target type
+                            resultList.Add((T)Convert.ChangeType(typedData, typeof(T))); // Convert deserialized data to type T and add to result list
+                        }
+                        else
+                        {
+                            // Handle the case where the data is not an IEnumerable
+                            Console.WriteLine($"Warning: Item[\"Data\"] is not an IEnumerable: {item}");
+                        }
+                    }
+                    else
+                    {
+                        // Handle the case where type information is missing
+                        Console.WriteLine($"Warning: Type information missing for item: {item}");
+                    }
+                }
+                else
+                {
+                    // Handle the case where the item is not an IDictionary
+                    Console.WriteLine($"Warning: Item is not an IDictionary: {item}");
+                }
             }
             return resultList;
         }
-
     }
+
 }
+

@@ -8,17 +8,20 @@ namespace yt_DesignUI.Models
 {
     public class Employee
     {
-        private DateTime lastStartTime;
-        public Employee(string name, DateTime birthday, int id, float rate,string position)
+        public Employee(bool isChecked, List<string> inbox, float workHours, string position, bool working, string name, DateTime birthday, int id, float rate,DateTime lastStartTime)
         {
             this.name = name;
             this.birthday = birthday;
             this.id = id;
             this.rate = rate;
             this.position = position;
-            inbox = new List<string>();
-          lastStartTime = DateTime.MinValue; 
+            this.working = working;
+            this.isChecked = isChecked;
+            this.inbox = inbox;
+            this.workHours = workHours;
+            this.lastStartTime = lastStartTime;
         }
+        protected DateTime lastStartTime;
         protected bool isChecked=true;
         protected string name;
         protected DateTime birthday;
@@ -33,9 +36,9 @@ namespace yt_DesignUI.Models
         public event EmployeeStateChangedHandler EmployeeStateChanged;
         public bool IsChecked
         {
-        
+
             get { return isChecked; }
-        protected set
+            protected set
             {
                 isChecked = value;
             }
@@ -43,19 +46,25 @@ namespace yt_DesignUI.Models
         public List<string> Inbox
         {
             get { return inbox; }
-           
+            protected set { Inbox = value; }
         }
 
         public float WorkHours
         {
             get { return (int)workHours; }
-            protected set {
+            protected set
+            {
                 if (value < 0)
                     return;
                 workHours += value;
             }
 
         }
+       
+
+       
+     
+       
         public string Position
         {
             get { return position; }
@@ -94,7 +103,14 @@ namespace yt_DesignUI.Models
                 rate = value;
             }
         }
-          
+        public DateTime LastStartTime
+        {
+            get { return lastStartTime; }
+            protected set
+            {
+                lastStartTime = value;
+            }
+        }
         public void startedToWork()
         {
             if (!working)

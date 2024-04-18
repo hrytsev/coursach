@@ -50,8 +50,10 @@ namespace yt_DesignUI
             holdTimer = new Timer();
             holdTimer.Interval = 150; // Интервал таймера - 100 миллисекунд
             holdTimer.Tick += HoldTimer_Tick;
+          
             if (true)
             {
+
                 string projectRootPath = Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath));
                 string filePath = Path.Combine(projectRootPath, "storage", "temp.json");
 
@@ -63,6 +65,7 @@ namespace yt_DesignUI
             }
 
             currentEnterprise = ListManager.getEnterprise()[ListManager.getIndex()];
+            
             renderInfo(ListManager.getEnterprise()[ListManager.getIndex()]);
 
             //label1.Text=
@@ -94,10 +97,10 @@ namespace yt_DesignUI
             //renderInfo(enterprise);
             this.currentEnterprise = enterprise;
             DateTime myDateTime = new DateTime(2024, 2, 9, 10, 30, 0);
-            Supervisor supervisor = new Supervisor("Ivan", myDateTime, 7777777, 50, "geniy");
-            Supervisor supervisor2 = new Supervisor("dimas", myDateTime, 7777776, 50, "geniy");
+            Employee supervisor = new Employee(true,new List<string>(),0,"geniy",false,"ivan",DateTime.Now,7777777,52,DateTime.Now);
+           // Supervisor supervisor2 = new Supervisor("dimas", myDateTime, 7777776, 50, "geniy");
             ListManager.addNewEmployee(supervisor);
-            ListManager.addNewEmployee(supervisor2);
+            //ListManager.addNewEmployee(supervisor2);
             ListManager.addNewEnterprise(enterprise);
             ListManager.addNewEnterprise(enterprise);
             ListManager.addNewEnterprise(enterprise);

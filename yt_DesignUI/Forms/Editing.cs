@@ -128,8 +128,8 @@ namespace yt_DesignUI.Forms
                 return;
             }
             currentEnterprise.removeAtWorkers(comboBox1.SelectedIndex);
-            Supervisor newSuper = new Supervisor(newName, selectedDate, newID, newRate, newPosition);
-            currentEnterprise.addToWorkers(newSuper);
+           // Supervisor newSuper = new Supervisor(newName, selectedDate, newID, newRate, newPosition);
+          //  currentEnterprise.addToWorkers(newSuper);
 
             this.Close();
 

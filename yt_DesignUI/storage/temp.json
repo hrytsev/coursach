@@ -1,31 +1,18 @@
 {
   "EmployeeList": [
     {
-      "Type": "yt_DesignUI.Models.Supervisor",
+      "Type": "yt_DesignUI.Models.Employee",
       "Data": {
         "IsChecked": true,
         "Inbox": [],
         "WorkHours": 0.0,
         "Position": "geniy",
         "Working": false,
-        "Name": "Ivan",
-        "Birthday": "2024-02-09T10:30:00",
+        "Name": "ivan",
+        "Birthday": "2024-04-18T19:45:17.0775471+03:00",
         "ID": 7777777,
-        "Rate": 50.0
-      }
-    },
-    {
-      "Type": "yt_DesignUI.Models.Supervisor",
-      "Data": {
-        "IsChecked": true,
-        "Inbox": [],
-        "WorkHours": 0.0,
-        "Position": "geniy",
-        "Working": false,
-        "Name": "dimas",
-        "Birthday": "2024-02-09T10:30:00",
-        "ID": 7777776,
-        "Rate": 50.0
+        "Rate": 52.0,
+        "LastStartTime": "2024-04-18T19:45:17.0787245+03:00"
       }
     }
   ],

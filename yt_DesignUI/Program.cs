@@ -18,8 +18,7 @@ namespace yt_DesignUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Supervisor super = new Supervisor("ivan", DateTime.Now, 7771112, 3,"geniy");
-            Enterprise entr = new Enterprise("hrytsevc!o","dont", 333324);
+            
             Application.Run(new
                                  //GetInfoEmployee(super,entr)
                                  Entrance()
