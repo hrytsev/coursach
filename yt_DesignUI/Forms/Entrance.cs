@@ -54,9 +54,9 @@ namespace yt_DesignUI
             // string projectRootPath = Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath));
             //string filePath = Path.Combine(projectRootPath, "storage", "temp.json");
 
-            //ListManager.SerializeData(filePath);
+            //ListManager.DeserializeData(filePath);
             generateStartStuff();
-            //renderInfo(ListManager.getEnterprise()[ListManager.getIndex()]);
+            renderInfo(ListManager.getEnterprise()[ListManager.getIndex()]);
             // Привязываем обработчики событий для кнопки
             //yt_Button12.MouseDown += yt_Button1_MouseDown;
             //yt_Button12.MouseUp += yt_Button1_MouseUp;
@@ -169,7 +169,7 @@ namespace yt_DesignUI
                 MessageBox.Show("Enter ID!");
                 return;
             }
-            foreach (Supervisor super in ListManager.getEmployeers())
+            foreach (Employee super in ListManager.getEmployeers())
             {
 
                 if (inputText.ToString() == super.ID.ToString())

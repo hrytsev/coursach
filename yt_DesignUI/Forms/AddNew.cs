@@ -34,7 +34,6 @@ namespace yt_DesignUI.Forms
         }
         public void renderInfo()
         {
-            ListManager.addNewEmployee(currentWorker);
             label6.Text =
                 //ListManager.getEmployeers().Count().ToString();
                 "Adding";
@@ -68,6 +67,7 @@ namespace yt_DesignUI.Forms
             {
                 Supervisor super = new Supervisor(newName,selectedDate,newID,newRate,newPosition);
                 currentEnterprise.addToWorkers(super);
+                ListManager.addNewEmployee(super);
                 MessageBox.Show("Admin " +newName+ " was added succesfully");
                 this.Close();
             }
@@ -76,7 +76,7 @@ namespace yt_DesignUI.Forms
                 Employee employee = new Employee(newName, selectedDate, newID, newRate, newPosition);
                 currentEnterprise.addToWorkers(employee);
                 MessageBox.Show("Worker " + newName + " was added succesfully");
-
+                ListManager.addNewEmployee(employee);
                 this.Close();
             }
 

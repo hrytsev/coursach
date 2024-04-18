@@ -50,11 +50,9 @@ namespace yt_DesignUI.Forms
             Series series1 = new Series();
             chart1.Series.Add(series1);
             series1.ChartType = SeriesChartType.Line;
-            currentEnterprise.addToWorkers(currentWorker);
-            currentEnterprise.addToWorkers(currentWorker);
-            currentEnterprise.addToWorkers(currentWorker);
            List <Employee>  workers = currentEnterprise.returnEmployee();
             float total = 0;
+            listBox1.Items.Clear();
             listBox1.Items.Add($"     this month: {DateTime.Now.ToString("MMMM")}");
             foreach (Employee employee in workers)
             {
