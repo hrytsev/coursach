@@ -32,7 +32,7 @@ namespace yt_DesignUI.Forms
             timer.Interval = 1000; 
             timer.Tick += Timer_Tick;
             timer.Start();
-            renderInfo();
+           renderInfo();
             //yt_Button4.Click += CaptureButton_Click;
             FilterInfoCollection videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
 

@@ -9,20 +9,20 @@ namespace yt_DesignUI.Models
     public class Employee
     {
         private DateTime lastStartTime;
-        public Employee(string _name, DateTime _birthday, int _id, float _rate,string position)
+        public Employee(string name, DateTime birthday, int id, float rate,string position)
         {
-            this.name = _name;
-            this.birthday = _birthday;
-            this.id = _id;
-            this.rate = _rate;
+            this.name = name;
+            this.birthday = birthday;
+            this.id = id;
+            this.rate = rate;
             this.position = position;
-            this.inbox = new List<string>();
-          this.lastStartTime = DateTime.MinValue; 
+            inbox = new List<string>();
+          lastStartTime = DateTime.MinValue; 
         }
         protected bool isChecked=true;
         protected string name;
         protected DateTime birthday;
-        public int id;
+        protected int id;
         protected float rate;
         protected bool working = false;
         protected string position;

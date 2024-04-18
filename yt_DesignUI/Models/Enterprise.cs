@@ -16,13 +16,13 @@ namespace yt_DesignUI.Models
         protected List <Employee> employeers;
         protected List <Supervisor> supervisors;
 
-        public Enterprise(string _name, string _rules, int _contactNumber)
+        public Enterprise(string name, string rules, int contactNumber)
         {
-            this.name = _name;
-            this.rules = _rules;
-            this.contactNumber = _contactNumber;
-            this.employeers = new List<Employee>();
-            this.log = new List<string>();
+            this.name = name;
+            this.rules = rules;
+            this.contactNumber = contactNumber;
+            employeers = new List<Employee>();
+            log = new List<string>();
         }
 
         public string Name

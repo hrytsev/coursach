@@ -62,8 +62,8 @@ namespace yt_DesignUI
                 generateStartStuff();
             }
 
-                
-           // renderInfo(ListManager.getEnterprise()[ListManager.getIndex()]);
+            currentEnterprise = ListManager.getEnterprise()[ListManager.getIndex()];
+            renderInfo(ListManager.getEnterprise()[ListManager.getIndex()]);
 
             //label1.Text=
             // Привязываем обработчики событий для кнопки
@@ -91,7 +91,7 @@ namespace yt_DesignUI
         public void generateStartStuff()
         {
             Enterprise enterprise = new Enterprise("Hrytsev!CO!", "wear that shit", 380677454);
-            renderInfo(enterprise);
+            //renderInfo(enterprise);
             this.currentEnterprise = enterprise;
             DateTime myDateTime = new DateTime(2024, 2, 9, 10, 30, 0);
             Supervisor supervisor = new Supervisor("Ivan", myDateTime, 7777777, 50, "geniy");
@@ -104,7 +104,7 @@ namespace yt_DesignUI
         }
         private void renderInfo(Enterprise enterprise)
         {
-            label1.Text = enterprise.Name;
+            label1.Text = enterprise.Name ;
             egoldsCard1.TextDescrition = enterprise.Rules;
             label3.Text = enterprise.ContactNumber.ToString();
         }
