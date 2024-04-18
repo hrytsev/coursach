@@ -51,7 +51,6 @@ namespace yt_DesignUI.Forms
                 comboBox1.Items.Add(worker.Name);
             }
             comboBox1.SelectedIndex = 0;
-            ListManager.addNewEnterprise(currentEnterprise);
             
            
         }

@@ -50,13 +50,20 @@ namespace yt_DesignUI
             holdTimer = new Timer();
             holdTimer.Interval = 150; // Интервал таймера - 100 миллисекунд
             holdTimer.Tick += HoldTimer_Tick;
+            if (true)
+            {
+                string projectRootPath = Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath));
+                string filePath = Path.Combine(projectRootPath, "storage", "temp.json");
 
-             string projectRootPath = Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath));
-            string filePath = Path.Combine(projectRootPath, "storage", "temp.json");
+                ListManager.DeserializeData(filePath);
+            }
+            else
+            {
+                generateStartStuff();
+            }
 
-            ListManager.DeserializeData(filePath);
-            //generateStartStuff();
-            renderInfo(ListManager.getEnterprise()[ListManager.getIndex()]);
+                
+           // renderInfo(ListManager.getEnterprise()[ListManager.getIndex()]);
 
             //label1.Text=
             // Привязываем обработчики событий для кнопки
@@ -74,11 +81,11 @@ namespace yt_DesignUI
 
         private void Entrance_Load(object sender, EventArgs e)
         {
-           
 
 
-            generateStartStuff();
-   
+
+           // generateStartStuff();
+
 
         }
         public void generateStartStuff()

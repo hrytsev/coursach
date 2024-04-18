@@ -115,13 +115,11 @@ namespace yt_DesignUI.Forms
         }
         public void setComboBox()
         {
-            currentEnterprise.addToWorkers(currentWorker);
             foreach (Enterprise enter in ListManager.getEnterprise())
             {
                 comboBox1.Items.Add(enter.Name);
             }
             comboBox1.SelectedIndex =ListManager.getIndex();
-            ListManager.addNewEnterprise(currentEnterprise);
 
 
         }

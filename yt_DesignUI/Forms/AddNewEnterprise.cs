@@ -34,7 +34,6 @@ namespace yt_DesignUI.Forms
         }
         public void renderInfo()
         {
-            ListManager.addNewEmployee(currentWorker);
             label6.Text =
             //ListManager.getEmployeers().Count().ToString();
                 "Adding";
