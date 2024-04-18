@@ -17,12 +17,12 @@ namespace yt_DesignUI.Models
             this.rate = _rate;
             this.position = position;
             this.inbox = new List<string>();
-          this.lastStartTime = DateTime.MinValue; // Устанавливаем начальное значение времени последнего начала работы
+          this.lastStartTime = DateTime.MinValue; 
         }
         protected bool isChecked=true;
         protected string name;
         protected DateTime birthday;
-        protected int id;
+        public int id;
         protected float rate;
         protected bool working = false;
         protected string position;
